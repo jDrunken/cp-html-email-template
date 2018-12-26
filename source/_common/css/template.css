@@ -1,0 +1,516 @@
+@charset 'utf-8';
+/* base element */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+	width:100% !important;
+	margin:0 auto;
+	padding:0;
+}
+
+
+body, table {
+	color:#444;
+	font-size:12px;
+	line-height:1.5;
+	mso-line-height-rule:exactly;
+	margin:0;
+	padding:0;
+	-ms-text-size-adjust:100%;
+	-webkit-text-size-adjust:100%;
+	text-align:left;
+}
+
+
+body,table,p,th,td,h1,h2,h3,h4,h5,h6,
+.p,.h1,.h2 {
+    font-family: 'Noto Sans Kr',applesdgothicneo-regular, "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica;
+	text-align:left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color:#222;
+	margin:0;
+	padding:0;
+}
+
+table {
+	mso-table-lspace:0pt;
+	mso-table-rspace:0pt;
+	mso-table-bspace:0pt;
+	mso-table-tspace:0pt;
+	mso-padding-alt:0;
+	mso-table-top:0;
+	mso-table-wrap:around;
+	table-layout:fixed;
+	border-collapse:collapse;
+	border-spacing:0;
+	width:100%;
+}
+
+img {
+	outline:0;
+	border:0;
+	-ms-interpolation-mode:bicubic;
+	max-width:100%;
+}
+
+
+p,
+.p {
+	padding: 0.3em 0;
+	font-size:14px;
+	word-break:break-all;
+}
+
+
+th {
+	background:#f8f8f8;
+}
+
+th,td {
+	mso-cellspacing:0;
+	mso-table-lspace:0pt;
+	mso-table-rspace:0pt;
+	mso-table-bspace:0pt;
+	mso-table-tspace:0pt;
+	-webkit-text-size-adjust:100%;
+	word-break:keep-all;
+	font-size:12px;
+	margin:0;
+	padding:0;
+}
+
+td.content{
+	padding:0 20px;
+}
+
+tbody th {
+	text-align:left;
+}
+
+strong {
+	color:#000;
+}
+
+a {
+	text-decoration:underline;
+	color:#1886FF;
+}
+
+.h1 {
+	font-size:28px;
+	padding-top:30px;
+	padding-bottom:0.6em;
+	line-height:1.3;
+	letter-spacing:-0.5px;
+	font-weight:bold;
+	color:#000;
+	vertical-align:middle;
+}
+
+
+.h1.padding2x{
+	padding-bottom:1em;
+}
+
+.h1.csph1{
+	font-size:22px;
+}
+
+.h2 {
+	font-size:18px;
+	letter-spacing:-0.5px;
+	font-weight:bold;
+	font-weight:600;
+}
+
+.h1 > em {
+	font-style:normal;
+	font-weight:500;
+	display:block;
+	color:#1886FF;
+}
+
+div,span,p { /* 이메일 특수 속성... */
+	width:100%;
+	display:inline-block;
+	margin:0;
+}
+
+.logo.text{
+	font-size:17px;
+	font-weight:600;
+}
+
+/* left right 마진 패딩값은 %값으로 줬음 */
+
+.copyright{
+	padding-top:50px;
+}
+
+.gray{
+	color:#999;
+}
+
+
+.margin-space.bottom{
+	padding-bottom:15px;
+}
+
+.margin-space.bottom2x{
+	padding-bottom:30px;
+}
+
+
+.margin-space.top{
+	margin-top:30px;
+}
+
+.explain-wrapper{
+	background-color:#F1F3F5;
+	padding:15px 5%;
+}
+.explan-zone-notable{
+	padding:5px 0;
+}
+
+
+.explain-zone .head-title{
+	padding-left:0;
+}
+
+.explain-zone .sub-title{
+	padding-bottom:0;
+	margin-top:10px;
+}
+
+.explain-zone .gray.explain-txt{
+	padding-top:0;
+}
+
+
+
+.explain-zone th{
+	background:none;
+	width:100px;
+}
+
+.explain-zone th,
+.explain-zone td{
+	padding:5px 0;
+
+}
+
+.explain-zone td{
+	padding:0 0 0 2.5%;
+	word-break:break-all;
+}
+
+.explain-txt{
+	font-size:12px;
+}
+
+.normal-font{
+	font-size:14px;
+}
+
+.regular-font{
+	font-size:13px;
+}
+
+.copyright p{
+	border-top:1px solid #EEEEEE;
+	padding-top:20px;
+}
+
+.table-default th{
+	font-size:12px;
+	color:#999;
+}
+
+.vertical-top{
+	vertical-align:top;
+}
+
+.table-default.head-wide th{
+	width:65%;
+}
+
+.table-default.contents-wide td{
+	width:65%;
+}
+
+.table-default td{
+	font-size:14px;
+	color:#000;
+}
+
+.spec-table{
+	margin:15px 0;
+}
+
+.spec-table.top{
+	margin:30px 0 15px;
+}
+
+.explain-zone .head-title,
+.spec-table .head-title{
+	font-size:16px;
+	color:#000;
+	font-weight:bold;
+	padding:0 0 10px 5%;
+}
+
+
+.spec-table table+p{
+	margin-top:10px;
+}
+
+.spec-table table{
+	border-top:3px solid #EEEEEE;
+	border-bottom:3px solid #EEEEEE;
+}
+
+.spec-table table th,
+.spec-table table td{
+	border-top:1px solid #EEEEEE;
+	padding:10px 0;
+}
+
+.spec-table table th{
+	background:none;
+	padding-left:5%;
+	font-weight:normal;
+}
+
+.spec-table table td{
+	text-align:right;
+	padding-right:5%;
+}
+
+.csp-table table th{
+	vertical-align:top;
+	width:35%;
+}
+.csp-table table th.width-low{
+	width:15%;
+}
+
+.csp-table table th.width-middle{
+	width:25%;
+}
+
+.csp-table table th,
+.csp-table table td{
+	text-align:left;
+	border-top-width:0;
+}
+
+.csp-table table .border th,
+.csp-table table .border td{
+	border-top-width:1;
+}
+
+
+.hr_4px,
+.hr_8px,
+.hr_12px {
+	font-size:1px;
+	padding:0;
+	margin:0;
+	line-height:1px;
+}
+
+.img-area{
+	padding:3% 0;
+}
+
+
+.logo{
+	padding:25px 0 0;
+}
+
+.logo,
+.logo img{
+	width:79px;
+}
+
+
+.hr_4px { height:4px !important;}
+.hr_8px { height:8px !important; }
+.hr_16px { height:16px !important; }
+/* //base element */
+
+
+/* super set */
+.align.left {
+	text-align:left;
+}
+
+.align.center {
+	text-align:center;
+}
+
+.align.right {
+	text-align:right;
+}
+
+.align.left > *,
+.align.center > *,
+.align.right > * {
+	text-align:justify;
+	text-align:initial;
+}
+
+.btn_area {
+	padding:30px 0 0 0;
+}
+
+strong.normal{
+	font-weight:normal;
+}
+
+.check-color{
+	color:#1886FF;
+}
+
+
+.cloud-status .arrow-image img{
+	width:18px;
+}
+.cloud-status p strong{margin-right:8px;}
+
+.cloud-status .healthy{
+	color:#6CB41D;
+}
+
+.cloud-status .unhealthy{
+	color:#EC444E;
+}
+
+
+
+/* //super set */
+
+
+/* common style guild */
+table.wrapper {
+	min-width:320px;
+	max-width:600px;
+	margin:auto;
+}
+
+td.wrapper {	/* namespace for outlook option */
+	padding-top:25px;
+	padding-bottom:25px;
+	box-sizing:border-box;
+	padding-left:5.8%;
+	padding-right:5.8%;
+}
+
+
+table.contents {
+	min-width:300px;	/* scroll 고려 */
+	width:100%;
+	margin:auto;
+}
+
+table.content th,
+table.content td {
+	text-align:initial;
+}
+
+table.content th,
+table.content td {
+	padding:0.5em 1em;
+}
+
+table.contents {
+	background:#fff;
+}
+
+.footer {
+	width:100%;
+}
+
+.footer td {
+	padding: 20px 0 30px;
+	font-size: 13px;
+	color: #9B9B9B;
+	text-align: center;
+	line-height: 17px;
+	mso-line-height-rule:exactly;
+}
+/* //common style guild */
+
+
+/* common style :: button look */
+a.btn {
+	text-decoration:none;
+}
+
+.btn {
+	display:inline-block;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+.button_area{
+	padding-top:24px;
+}
+
+.a_btn{
+	font-size: 14px;
+	font-family: applesdgothicneo-regular, "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica;
+	color: #ffffff;
+	text-decoration: none;
+	background-color: #000000;
+	border-top: 12px solid #000;
+	border-bottom: 12px solid #000;
+	border-right: 18px solid #000;
+	border-left: 18px solid #000;
+	display: inline-block;
+}
+
+.a_btn.large_txt{
+	font-size:16px;
+}
+
+
+
+.btn img {
+	vertical-align:-1px;
+}
+
+.btn.big {
+	text-align:center;
+	line-height:0.95;
+    padding-top: 12px;
+    padding-right: 41px;
+    padding-bottom: 12px;
+    padding-left: 41px;
+	mso-line-height-rule:exactly;
+	mso-border-alt: 10px solid #000;
+	mso-padding-alt: 0;
+	font-size:14px;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-weight:500;
+}
+
+.btn.black {
+	background:#000;
+	color:#fff;
+	border:1px solid #000;;
+}
+
+
+.btn a {
+	text-decoration:none;
+	color:#fff;
+	display:block;
+}
+/* //common style :: button look */
