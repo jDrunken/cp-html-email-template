@@ -101,6 +101,11 @@ gulp.task('css', function (){
 		.pipe(livereload());
 });
 
+gulp.task('font', function (){
+    gulp.src(path.source.font + '/**/*.*')
+        .pipe(gulp.dest(path.devserver))
+        .pipe(livereload());
+});
 // 파일 변경 감지 :: 로컬 개발 전용
 gulp.task('watch', function(callback) {
 	livereload.listen();
@@ -120,7 +125,7 @@ gulp.task('clean:local',function () {
 
 // 로컬 개발환경 launching
 gulp.task('local', function () {
-	runSequence('clean:local',['make:index.html','html','css','image:copy','watch','connect']);
+	runSequence('clean:local',['make:index.html','html','css','font','image:copy','watch','connect']);
 });
 
 

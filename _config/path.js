@@ -5,19 +5,20 @@ module.exports = {
     // 이메일 전송 테스트 이미지를 전송해서 모바일에서도 확인
     source : {
         // 공통 마스터 탬플릿
-        root : './source',
-        common : './source/_common',
-        html : './source/html'
+        root : 'source',
+        common : 'source/_common',
+        html : 'source/html',
+        font : 'source/font'
     },
 
     // 로컬 서버 루트 경로 설정
-    devserver : './dev-server/',
+    devserver : 'dev-server/',
 
     // 빌드 폳더 설정 (여기서 메일 발송을 하게 함)
-    emailtest : './.email-test',
+    emailtest : '.email-test',
 
     // 배포용 릴리즈 폴더 설정
-    release : './release',
+    release : 'release',
 
     // 무시 목록
     ignore : [
