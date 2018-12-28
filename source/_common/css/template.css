@@ -1,24 +1,17 @@
 @charset 'utf-8';
 
 /* base element */
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700|Roboto:400,700&subset=korean');
-
-@font-face {
-    font-family: 'FedraSerifBPro';
-    src: local(FedraSerifPro B Normal);
-    src: url(/FedraSerifPro_B_Normal.woff) format('woff')
-}
-
 body {
     width:100% !important;
     margin:0 auto;
     padding:0;
+    font-size:16px;
+    background:#fff;
 }
 
 
 body, table {
     color:#444;
-    font-size:12px;
     line-height:1.5;
     mso-line-height-rule:exactly;
     margin:0;
@@ -54,6 +47,10 @@ table {
     width:100%;
 }
 
+p,a,li,td,blockquote{
+    mso-line-height-rule:exactly;
+}
+
 img {
     outline:0;
     border:0;
@@ -73,7 +70,6 @@ th,td {
     mso-table-tspace:0pt;
     -webkit-text-size-adjust:100%;
     word-break:keep-all;
-    font-size:12px;
     margin:0;
     padding:0;
 }
@@ -154,6 +150,7 @@ a.btn {
 }
 
 table.wrapper {
+    background-color:#fff;
 	min-width:320px;
 	max-width:600px;
 	margin:auto;
@@ -164,3 +161,10 @@ table.wrapper {
 a {
     text-decoration:none;
 }
+
+.p,
+.h2,
+.h3 {
+    word-break:keep-all;
+}
+

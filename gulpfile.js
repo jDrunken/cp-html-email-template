@@ -61,6 +61,15 @@ gulp.task('html', function (){
         annotations:false
         , 	verbose:false
     })) // default options
+    .pipe(inlineCss({
+        applyStyleTags: true,
+        applyLinkTags: true,
+        removeStyleTags: false,
+        removeLinkTags: true,
+        preserveMediaQueries :true,
+        applyTableAttributes : true,
+        removeHtmlSelectors : false
+    }))
     .pipe(gulp.dest(path.devserver))
     .pipe(livereload());
 });
@@ -125,7 +134,8 @@ gulp.task('clean:local',function () {
 
 // 로컬 개발환경 launching
 gulp.task('local', function () {
-	runSequence('clean:local',['make:index.html','html','css','font','image:copy','watch','connect']);
+	// runSequence('clean:local',['make:index.html','html','css','font','image:copy','watch','connect']);
+	runSequence(['make:index.html','html','css','font','image:copy','watch','connect']);
 });
 
 
@@ -157,7 +167,6 @@ gulp.task('build:email',function () {
     // ftp 서버에 배포용 이미지 전송
     gulp.src(path.source.root + '/**/*.png')
         .pipe(rename({dirname:''}))     //각기 다른 폴더의 파일을 하나의 목적지 폴더로
- 		.pipe(sftp(ftp_status));
     // html 가공
 
     gulp.src([
@@ -172,16 +181,16 @@ gulp.task('build:email',function () {
             , 	verbose:false
         }))
         .pipe(inlineCss({
-			applyStyleTags: true,
-			applyLinkTags: true,
-			removeStyleTags: true,
-			removeLinkTags: true,
-			preserveMediaQueries :true,
-			applyTableAttributes : true,
-			removeHtmlSelectors : true
-		}))
+            applyStyleTags: true,
+            applyLinkTags: true,
+            removeStyleTags: false,
+            removeLinkTags: true,
+            preserveMediaQueries :true,
+            applyTableAttributes : true,
+            removeHtmlSelectors : false
+        }))
         // 이미지 경로를 외부에서 확인할 수 있는 주소로 변경
- 		.pipe(replace('img src="./image/', 'img src="'+path.ftp.image_server))
+         // .pipe(replace('img src="./image/', 'img src="'+path.ftp.image_server))
 		.pipe(stripComment({
 			safe : true
 		}))
@@ -246,14 +255,14 @@ gulp.task('release', function () {
             , 	verbose:false
         }))
         .pipe(inlineCss({
-			applyStyleTags: true,
-			applyLinkTags: true,
-			removeStyleTags: true,
-			removeLinkTags: true,
-			preserveMediaQueries :true,
-			applyTableAttributes : true,
-			removeHtmlSelectors : true
-		}))
+            applyStyleTags: true,
+            applyLinkTags: true,
+            removeStyleTags: false,
+            removeLinkTags: true,
+            preserveMediaQueries :true,
+            applyTableAttributes : true,
+            removeHtmlSelectors : false
+        }))
         // 이미지 경로를 외부에서 확인할 수 있는 주소로 변경
  		.pipe(replace('img src="./image/', 'img src="'+path.ftp.image_server))
 		.pipe(stripComment({
