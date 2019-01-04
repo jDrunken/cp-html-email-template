@@ -8,21 +8,19 @@ module.exports = {
         root : 'source',
         common : 'source/_common',
         html : 'source/html',
-        font : 'source/font'
+        font : 'source/font',
+        template : {
+            root : 'source/template',
+            base : 'source/template/base'
+        }
     },
 
-    // 로컬 서버 루트 경로 설정
-    devserver : 'dev-server/',
-
-    // 빌드 폳더 설정 (여기서 메일 발송을 하게 함)
-    emailtest : '.email-test',
-
-    // 배포용 릴리즈 폴더 설정
-    release : 'release',
+    devserver : 'devserver',
 
     // 무시 목록
     ignore : [
         '!**/_common/**',     // 공통파일은 포함하지 않음.
+        '!**/base/**',     // 공통파일은 포함하지 않음.
         '!**/@snippet/**',    // 조각파일도 포함하지 않음.
         '!**/resource/**',    // 로컬 리소스 폴더도 포함하지 않음.
         '!**/index.html'      // index 파일도 포함하지 않음.
