@@ -1,0 +1,31 @@
+{
+  "name": "cp-html-email-template",
+  "version": "1.0.0",
+  "description": "## dependancy",
+  "main": "_gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chain-partners/cp-html-email-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chain-partners/cp-html-email-template/issues"
+  },
+  "homepage": "https://github.com/chain-partners/cp-html-email-template#readme",
+  "dependencies": {
+    "gm": "^1.23.1",
+    "gulp": "^4.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-exec": "^3.0.2",
+    "gulp-html-extend": "^1.1.6",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-inline-css": "^3.3.1",
+    "gulp-livereload": "^4.0.1",
+    "imagemagick": "^0.1.3"
+  }
+}

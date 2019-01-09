@@ -4,6 +4,7 @@
 
 node@latest
 gulp@4.0.0
+imagemagick
 
 ## install
 
