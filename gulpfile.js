@@ -6,11 +6,16 @@ const extender = require('gulp-html-extend')
 const inlineCss = require('gulp-inline-css')
 const livereload = require('gulp-livereload')
 const shell = require('gulp-exec')
-const vinyl = require('vinyl')
+const path = require('path')
+const tap = require('gulp-tap')
+const datetime = require('node-datetime');
+
+
+let gm = require('gm').subClass({imageMagick: true});
 
 // config
 const rule = require('./_config/rule.js')
-const path = require('./_config/path.js')
+const directory = require('./_config/path.js')
 
 //prefix
 let make = {}
@@ -20,7 +25,7 @@ let copy = {}
 // 서버 실행
 const devserver = function () {
 	return connect.server({
-		root: path.devserver,
+		root: directory.devserver,
 		port : 2219,
 		livereload: true,
         directory:true,
@@ -32,27 +37,28 @@ const devserver = function () {
 
 // 이미지 복사
 copy.image = function () {
-    return src([path.source.root + '/**/*.png'].concat(path.ignore))
-    .pipe(dest(path.devserver))
+    return src([directory.source.template.root + '/**/*.png'].concat(directory.ignore))
+    .pipe(dest(directory.devserver))
 }
 
 // html build
 make.html = function makehtml () {
-    return src([path.source.template.root + '/**/*.html'].concat(path.ignore))
+    return src([directory.source.template.root + '/**/*.html'].concat(directory.ignore))
     .pipe(extender(rule.htmlExtend)) // default options
     .pipe(inlineCss(rule.inlineCss))
-    .pipe(dest(path.devserver))
+    .pipe(dest(directory.devserver))
     .pipe(livereload({start:true}))
 }
 
 // title image file 생성
 make.title = function maketitle () {
-    return src([path.source.template.root + '/**/*.html'].concat(path.ignore))
+    return src([directory.source.template.root + '/**/*.html'].concat(directory.ignore))
 };
 
 
 watchfile = function watchfile () {
-    watch(path.source.template.root + '/**/*.html',series(make.html));
+    watch(directory.source.template.root + '/**/*.html',series(make.html));
+    watch(directory.source.template.root + '/**/*.png',series(copy.image));
 }
 
 
@@ -71,40 +77,50 @@ exports.maketitle = make.title;
 
 // watch 옵션을 주면 병렬로 실행시켜야 된다. (끝나지 않는 프로세스)
 
-exports.local = parallel(devserver, make.html, watchfile);
 
-let gm = require('gm').subClass({imageMagick: true});
+make.date = async function makedate () {
+    // 여기서 해줘야 될건...
+    // 파일명을 받아온다.
+    // 받아온 파일명을 변환한다. (2019-12-28 => December,28 2018)
+    // 이미지로 파일을 만든다.
 
-let im = require('imagemagick')
+    let text = '';
 
 
-function test () {
-    // return gm(200, 400, "#ddff99f3").drawText(10, 50, "from scratch").write("/Users/mycoolade/workspace/cp-html-email-template/test.png", function (err) {
-        // if (!err) console.log('done');
-        // // ...
-    // });
+    return src([directory.source.template.root + '/**/*.html'].concat(directory.ignore),{stat:true})
+        .pipe(
+            tap(function (file,t) {
+                let dateText = file.path.split('/').reverse()[0].split('.')[0]
+                formattedDate = datetime.create(dateText,'f,d Y').format()
 
-    gm(329,98,'white')
-        // .background('white')
-        .fill('black')
-        .gravity('West')
-        .font(`/Users/mycoolade/workspace/cp-html-email-template/source/font/FedraSerifPro B Normal.otf`,16)
-        .density(144)
-        .antialias(true)
-        .drawText(0,0,'Chain Partners\nMonthly Newsletter')
-        // .out('label:Chain Partners\nMonthly Newsletter')
-        .in('-interword-spacing 200')
-        .write("/Users/mycoolade/workspace/cp-html-email-template/test.png", function (err) {
-            if (!err) console.log('done');
-            // ...
-        });
+                let saveTarget = file.path.split('/')
+                saveTarget.reverse().shift()
+                saveTarget = saveTarget.reverse().join('/')
 
-    // 한줄 사용평
-    // 줄간격 조정이 잘 안되거든...
-    // 한줄짜리 엘리먼트에만 사용해라. 그러면 된다.
+                text = saveTarget;
+                console.log(text);
+
+                gm(329,98,'white')
+                    .background('white')
+                    .fill('black')
+                    .gravity('West')
+                    .font(`${directory.source.font}/FedraSerifPro B Normal.otf`,16)
+                    .density(144)
+                    .antialias(true)
+                    .drawText(0,0,formattedDate)
+                // .out('label:Chain Partners\nMonthly Newsletter')
+                // .in('-interword-spacing 200')
+                    .write(`${saveTarget}/date.png`, function (err) {
+                        // !err ? console.log('done') : console.log('error')
+                        // ...
+                    });
+            })
+        )
 }
 
-test()
+exports.local = parallel(devserver, series(make.date, copy.image, make.html), watchfile);
+
+exports.image = make.date;
 // convert -background white -fill black -size 329x98 -geometry +1000+0 -gravity West  -font "./source/font/FedraSerifPro B Normal.otf"\
         // -pointsize 32 -density 72 -interline-spacing 5 label:"Chain Partners\nMonthly Newsletter"\
         // ~/desktop/Label.png | open ~/desktop/Label.png
