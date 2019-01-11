@@ -1,19 +1,19 @@
 const inlineCss = {
     applyStyleTags: true,
     applyLinkTags: true,
-    removeStyleTags: false,
-    removeLinkTags: true,
+    removeStyleTags: true,
+    removeLinkTags: false,
     preserveMediaQueries :true,
     applyTableAttributes : true,
     removeHtmlSelectors : false
 };
 
 const htmlExtend = {
-    annotations:false,
-    verbose:false
+    annotations:true,
+    verbose:true
 };
 
-module.export = {
+module.exports = {
     inlineCss,
     htmlExtend
 }

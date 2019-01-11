@@ -23,7 +23,9 @@ body, table {
 
 
 body,table,p,th,td {
-    font-family: 'Noto Sans Kr',applesdgothicneo-regular, "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica;
+    /* font-family: 'Noto Sans Kr',applesdgothicneo-regular, "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica; */
+    /* font-family:  "Apple SD Gothic Neo", "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica; */
+    font-family:sans-serif;
     text-align:left;
 }
 
@@ -69,7 +71,6 @@ th,td {
     mso-table-bspace:0pt;
     mso-table-tspace:0pt;
     -webkit-text-size-adjust:100%;
-    word-break:keep-all;
     margin:0;
     padding:0;
 }
