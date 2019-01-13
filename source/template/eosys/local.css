@@ -1,0 +1,129 @@
+/* global */
+.hr {
+    width:100%;
+}
+
+.hr .line hr {
+    border-radius:0;
+    background-color:#eee;
+    border:0;
+    border-top:1px solid #eee;
+    color:#eee;
+    margin:0;
+}
+
+.hr .line.bold hr {
+    border-top-width:8px;
+}
+
+td {
+  font-size: 14px;
+  line-height: 1.29;
+  color: #222222;
+}
+
+.container {
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.spacer._20px {
+    line-height:100%;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size:0;
+}
+
+.spacer._15px {
+    line-height:100%;
+    padding-top:8px;
+    padding-bottom:7px;
+    font-size:0;
+}
+
+.spacer._40px {
+    font-size:0;
+    line-height:100%;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.spacer._50px {
+    font-size:0;
+    line-height:100%;
+    padding-top:25px;
+    padding-bottom:25px;
+}
+
+.spacer._60px {
+    font-size:0;
+    line-height:100%;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+.header { }
+
+.header .img {
+    height:101px;
+    text-align:center;
+    padding-bottom:18px;
+}
+
+.header .h1 {
+    word-break:keep-all;
+    text-align:center;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.13;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #ff4176;
+    padding-left:40px;
+    padding-right:40px;
+}
+
+.header .h1 span {
+    display:inline-block;
+}
+
+.h2 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.33;
+    color: #222222;
+}
+
+.p {
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.1px;
+    color: #989ba0;
+}
+
+.button {
+    display:block;
+    width:100%;
+}
+
+.button a table td {
+    width:100%;
+    text-align:center;
+    padding-top:23px;
+    padding-bottom:23px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff4176;
+}
+
+
+.ko * {
+    font-family:"Apple SD Gothic Neo", "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica;
+    letter-spacing:-0.2px;
+}
+
+.en * {
+    font-family:"SF Pro Display","Apple SD Gothic Neo", "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica;
+    letter-spacing:-0.2px;
+}
