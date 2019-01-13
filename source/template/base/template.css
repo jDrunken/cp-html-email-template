@@ -24,8 +24,8 @@ body, table {
 
 body,table,p,th,td {
     /* font-family: 'Noto Sans Kr',applesdgothicneo-regular, "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica; */
-    /* font-family:  "Apple SD Gothic Neo", "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica; */
-    font-family:sans-serif;
+    font-family:  "Apple SD Gothic Neo", "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica;
+    /* font-family:sans-serif; */
     text-align:left;
 }
 
@@ -75,7 +75,7 @@ th,td {
     padding:0;
 }
 
-div,span,p { /* 이메일 특수 속성... */
+div,p { /* 이메일 특수 속성... */
     width:100%;
     display:inline-block;
     margin:0;
