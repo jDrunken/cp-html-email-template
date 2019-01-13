@@ -10,6 +10,10 @@ const path = require('path')
 const tap = require('gulp-tap')
 const datetime = require('node-datetime')
 const replace = require('gulp-replace-string')
+const del = require('del')
+const htmlmin = require('gulp-htmlmin')
+const strip = require('gulp-strip-comments')
+
 
 let gm = require('gm').subClass({imageMagick: true});
 
@@ -34,6 +38,11 @@ const devserver = function () {
 	});
 }
 
+// devserver 디렉토리 삭제 후 트랜스파일 시작
+const clean = function () {
+    return del(directory.devserver)
+
+}
 
 // 이미지 복사
 copy.image = function () {
@@ -82,6 +91,10 @@ make.html = function makehtml () {
     return src([directory.source.template.root + '/**/*.html'].concat(directory.ignore))
         .pipe(extender(rule.htmlExtend)) // default options
         .pipe(inlineCss(rule.inlineCss))
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(strip({
+            safe:true
+        }))
         .pipe(dest(directory.devserver))
         .pipe(livereload({start:true}))
 }
@@ -93,6 +106,12 @@ make.title = function maketitle () {
 
 copy.localcss = function copylocalcss () {
     return src([directory.source.template.root + '/**/*.css'].concat(directory.ignore))
+        .pipe(dest(directory.devserver))
+        .pipe(livereload({start:true}))
+}
+
+copy.basecss = function copybasecss () {
+    return src(directory.source.template.base + '/template.css')
         .pipe(dest(directory.devserver))
         .pipe(livereload({start:true}))
 }
@@ -160,6 +179,6 @@ make.date = async function makedate () {
         )
 }
 
-exports.local = parallel(devserver, series(make.date, copy.image,copy.localcss, make.html), watchfile);
+exports.local = parallel(devserver, series(clean, make.date, copy.image, copy.localcss, copy.basecss, make.html), watchfile);
 
 exports.image = make.date;
