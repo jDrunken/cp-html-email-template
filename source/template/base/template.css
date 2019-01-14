@@ -23,9 +23,7 @@ body, table {
 
 
 body,table,p,th,td {
-    /* font-family: 'Noto Sans Kr',applesdgothicneo-regular, "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica; */
     font-family:  "Apple SD Gothic Neo", "맑은고딕", malgun gothic, sans-serif;
-    /* font-family:sans-serif; */
     text-align:left;
 }
 
@@ -81,22 +79,6 @@ div,p { /* 이메일 특수 속성... */
     margin:0;
 }
 /* common style :: button look */
-
-a.btn {
-    text-decoration:none;
-}
-
-.btn {
-    display:inline-block;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-}
-
-.button_area{
-    padding-top:24px;
-}
 
 table.wrapper {
     background-color:#fff;

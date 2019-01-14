@@ -1,4 +1,8 @@
 /* global */
+table * {
+    letter-spacing:-0.2px;
+}
+
 .hr {
     width:100%;
 }
@@ -10,14 +14,17 @@
     border-top:1px solid #eee;
     color:#eee;
     margin:0;
+    box-sizing:border-box;
 }
 
 .hr .line.bold hr {
     box-sizing:border-box;
-    border-top:8px solid #eee;
+    /* border-top:8px solid #eee; */
+    border-top:0;
     background-color:#eee;
     height:8px;
     font-size:8px;
+    box-sizing:border-box;
 }
 
 td {
@@ -186,18 +193,4 @@ td {
 .footer .link td,
 .footer .link td a {
     font-size:0;
-}
-
-.ko * {
-    letter-spacing:-0.2px;
-}
-
-.en * {
-    font-family:"SF Pro Display", "Apple SD Gothic Neo", "맑은고딕", malgun gothic, sans-serif;
-    letter-spacing:-0.2px;
-}
-
-.en .h1,
-.en .h1 span {
-    font-family:"SFProDisplay-Light","SF Pro Display", "Apple SD Gothic Neo", "맑은고딕", malgun gothic, sans-serif;
 }
