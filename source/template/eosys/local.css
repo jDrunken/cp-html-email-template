@@ -13,7 +13,11 @@
 }
 
 .hr .line.bold hr {
-    border-top-width:8px;
+    box-sizing:border-box;
+    border-top:8px solid #eee;
+    background-color:#eee;
+    height:8px;
+    font-size:8px;
 }
 
 td {
@@ -62,7 +66,27 @@ td {
     padding-bottom:30px;
 }
 
-.header { }
+.spacer._80px {
+    font-size:0;
+    line-height:100%;
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+
+.spacer.width_20px {
+    width:20px;
+    padding-left:10px;
+    padding-right:10px;
+    color:transparent;
+    font-size:1px;
+}
+
+.spacer.width_10px {
+    width:10px;
+    color:transparent;
+    font-size:0px;
+}
 
 .header .img {
     height:101px;
@@ -81,6 +105,7 @@ td {
     color: #ff4176;
     padding-left:40px;
     padding-right:40px;
+    font-family:'AppleSDGothicNeo-Light','Apple SD Gothic Neo','맑은고딕', malgun gothic, sans-serif;
 }
 
 .header .h1 span {
@@ -102,28 +127,77 @@ td {
 }
 
 .button {
+    width:100%;
+    /* padding-top:23px; */
+    /* padding-bottom:23px; */
+    background-color: #ff4176;
+    text-align:center;
+}
+
+.button a {
     display:block;
+    text-align:center;
     width:100%;
 }
 
-.button a table td {
-    width:100%;
+.button span {
+    display:block;
     text-align:center;
-    padding-top:23px;
-    padding-bottom:23px;
+    width:100%;
+    padding:23px 0;
     font-size: 18px;
     font-weight: bold;
     color: #ffffff;
-    background-color: #ff4176;
+    font-family:"AppleSDGothicNeo-semibold","Apple SD Gothic Neo","맑은고딕", malgun gothic, sans-serif;
 }
 
+.en .button a {
+    font-family:"SFProDisplay-semibold","SFProDisplay","AppleSDGothicNeo-Light","Apple SD Gothic Neo","맑은고딕", malgun gothic, sans-serif;
+}
+
+.footer {
+    padding-top:40px;
+    padding-bottom:38px;
+    background:#f9fafc;
+}
+
+.footer .p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #9b9b9b;
+}
+
+.footer .p a {
+    color:inherit;
+    text-decoration:underline;
+}
+
+.footer .link,
+.footer .link td {
+    vertical-align:top;
+    text-align:right;
+}
+
+.footer .link {
+    width:150px;
+}
+
+.footer .link td,
+.footer .link td a {
+    font-size:0;
+}
 
 .ko * {
-    font-family:"Apple SD Gothic Neo", "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica;
     letter-spacing:-0.2px;
 }
 
 .en * {
-    font-family:"SF Pro Display","Apple SD Gothic Neo", "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica;
+    font-family:"SF Pro Display", "Apple SD Gothic Neo", "맑은고딕", malgun gothic, sans-serif;
     letter-spacing:-0.2px;
+}
+
+.en .h1,
+.en .h1 span {
+    font-family:"SFProDisplay-Light","SF Pro Display", "Apple SD Gothic Neo", "맑은고딕", malgun gothic, sans-serif;
 }

@@ -12,7 +12,7 @@ body {
 
 body, table {
     color:#444;
-    line-height:1.5;
+    line-height:1.1;
     mso-line-height-rule:exactly;
     margin:0;
     padding:0;
@@ -24,7 +24,7 @@ body, table {
 
 body,table,p,th,td {
     /* font-family: 'Noto Sans Kr',applesdgothicneo-regular, "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica; */
-    font-family:  "Apple SD Gothic Neo", "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica;
+    font-family:  "Apple SD Gothic Neo", "맑은고딕", malgun gothic, sans-serif;
     /* font-family:sans-serif; */
     text-align:left;
 }
@@ -98,58 +98,6 @@ a.btn {
     padding-top:24px;
 }
 
-.a_btn{
-    font-size: 14px;
-    font-family: applesdgothicneo-regular, "맑은고딕", malgun gothic, dotum, "돋움", dotum, helvetica;
-    color: #ffffff;
-    text-decoration: none;
-    background-color: #000000;
-    border-top: 12px solid #000;
-    border-bottom: 12px solid #000;
-    border-right: 18px solid #000;
-    border-left: 18px solid #000;
-    display: inline-block;
-}
-
-.a_btn.large_txt{
-    font-size:16px;
-}
-
-
-
-.btn img {
-    vertical-align:-1px;
-}
-
-.btn.big {
-    text-align:center;
-    line-height:0.95;
-    padding-top: 12px;
-    padding-right: 41px;
-    padding-bottom: 12px;
-    padding-left: 41px;
-    mso-line-height-rule:exactly;
-    mso-border-alt: 10px solid #000;
-    mso-padding-alt: 0;
-    font-size:14px;
-    text-transform:uppercase;
-    font-weight:bold;
-    font-weight:500;
-}
-
-.btn.black {
-    background:#000;
-    color:#fff;
-    border:1px solid #000;;
-}
-
-
-.btn a {
-    text-decoration:none;
-    color:#fff;
-    display:block;
-}
-
 table.wrapper {
     background-color:#fff;
 	min-width:320px;
@@ -169,3 +117,7 @@ a {
     word-break:keep-all;
 }
 
+.contact a {
+    color: inherit !important;
+    text-decoration: none;
+}

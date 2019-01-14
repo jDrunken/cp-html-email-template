@@ -122,7 +122,7 @@ const watchfile = function watchfile () {
     watch([
         directory.source.template.root + '/**/*.html',
         directory.source.template.root + '/**/*.css'
-    ],series(make.html))
+    ],series(clean, copy.image, copy.localcss, copy.basecss, make.html))
     watch(directory.source.template.root + '/**/*.png',series(copy.image))
 }
 

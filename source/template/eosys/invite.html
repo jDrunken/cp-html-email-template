@@ -2,14 +2,46 @@
 
 <!-- @@block = responsive -->
 <style>
-@media (min-width:600px) {
-    .container {
-        padding-left:40px !important;
-        padding-right:40px !important;
+@media (max-width:2560px) {
+    #MessageViewBody a {
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+
+    u + #body a {
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+
+    a[href],
+    a[href^=tel],
+    a[href^=address] {
+        color:inherit;
     }
 }
 
 @media (max-width:450px) {
+    .h2 br {
+        display:none;
+    }
+
     .footer td {
         width:100% !important;
         display:block !important;
@@ -23,8 +55,41 @@
         width:auto !important;
         display:table-cell !important;
     }
+
+    .spacer.mobile_40px {
+        padding-top:22px !important;
+        padding-bottom:22px !important;
+    }
+}
+
+@media (min-width:600px) {
+    .container {
+        padding-left:40px !important;
+        padding-right:40px !important;
+    }
+}
+
+</style>
+<!-- outlook desktop 대응 스타일 -->
+<!--[if mso | ie]>
+<style>
+.container {
+    padding-left:40px !important;
+    padding-right:40px !important;
+}
+
+.en .h1,
+.en .h1 span {
+    line-height:1.1 !important;
+    font-family:"맑은고딕", malgun gothic, sans-serif !important;
+}
+
+.spacer._80px {
+    padding-top:32px !important;
+    padding-bottom:32px !important;
 }
 </style>
+<![endif]-->
 <!-- @@close -->
 
 <!-- @@block = content -->
@@ -54,10 +119,7 @@
                 </tr>
             </table>
 
-
-            <table><tr><td class="spacer _40px">&nbsp;</td></tr></table>
-            <table class="hr"><tr><td class="line"><hr></td></tr></table>
-            <table><tr><td class="spacer _40px">&nbsp;</td></tr></table>
+            <table class="hr"><tr><td class="line spacer _80px"><hr></td></tr></table>
 
             <table>
                 <tr>
@@ -73,9 +135,7 @@
                 </tr>
             </table>
 
-            <table><tr><td class="spacer _40px">&nbsp;</td></tr></table>
-            <table class="hr"><tr><td class="line"><hr></td></tr></table>
-            <table><tr><td class="spacer _40px">&nbsp;</td></tr></table>
+            <table class="hr"><tr><td class="line spacer _80px"><hr></td></tr></table>
 
             <table>
                 <tr>
@@ -95,16 +155,10 @@
                             </tr>
                             <tr><td class="spacer _40px">&nbsp;</td></tr>
                             <tr>
-                                <td class="button">
-                                        <a href="http://eepurl.com/dPe5l9" target="_blank" rel="noopener">
-                                            <table>
-                                                <tr>
-                                                    <td>
-                                                        뉴스레터 신청하기
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </a>
+                                <td class="button" height="70">
+                                    <a href="https://partners.us19.list-manage.com/subscribe?u=e8ad981263be1cab85d86b3ba&id=68f7de4629&incoming=eosys" target="_blank" rel="noopener">
+                                        <span>뉴스레터 신청하기</span>
+                                    </a>
                                 </td>
                             </tr>
                         </table>
@@ -118,7 +172,7 @@
 
 
 
-<table><tr><td class="spacer _60px">&nbsp;</td></tr></table>
+<table><tr><td class="spacer _60px mobile_40px">&nbsp;</td></tr></table>
 <table class="hr"><tr><td class="line bold"><hr></td></tr></table>
 <table><tr><td class="spacer _50px">&nbsp;</td></tr></table>
 
@@ -151,9 +205,7 @@
                 </tr>
             </table>
 
-            <table><tr><td class="spacer _40px">&nbsp;</td></tr></table>
-            <table class="hr"><tr><td class="line"><hr></td></tr></table>
-            <table><tr><td class="spacer _40px">&nbsp;</td></tr></table>
+            <table class="hr"><tr><td class="line spacer _80px"><hr></td></tr></table>
 
             <table>
                 <tr>
@@ -171,9 +223,7 @@
                 </tr>
             </table>
 
-            <table><tr><td class="spacer _40px">&nbsp;</td></tr></table>
-            <table class="hr"><tr><td class="line"><hr></td></tr></table>
-            <table><tr><td class="spacer _40px">&nbsp;</td></tr></table>
+            <table class="hr"><tr><td class="line spacer _80px"><hr></td></tr></table>
 
             <table>
                 <tr>
@@ -192,14 +242,10 @@
                             </tr>
                             <tr><td class="spacer _40px">&nbsp;</td></tr>
                             <tr>
-                                <td class="button">
-                                        <a href="http://eepurl.com/dPe5l9" target="_blank" rel="noopener">
-                                            <table>
-                                                <tr>
-                                                    <td>SUBSCRIBE</td>
-                                                </tr>
-                                            </table>
-                                        </a>
+                                <td class="button" height="70">
+                                    <a href="https://partners.us19.list-manage.com/subscribe?u=e8ad981263be1cab85d86b3ba&id=5651976dc1&incoming=eosys" target="_blank" rel="noopener">
+                                        <span>SUBSCRIBE</span>
+                                    </a>
                                 </td>
                             </tr>
                         </table>
@@ -211,81 +257,45 @@
     </tr>
 </table>
 
-<table><tr><td class="spacer _40px">&nbsp;</td></tr></table>
-
-<style>
-.footer {
-    padding-top:40px;
-    padding-bottom:40px;
-    background:#f9fafc;
-}
-
-.footer .p {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.3;
-    color: #9b9b9b;
-}
-
-.footer .p a {
-    color:inherit;
-    text-decoration:underline;
-}
-
-.footer .link,
-.footer .link td {
-    vertical-align:top;
-    text-align:right;
-}
-
-.footer .link {
-    width:150px;
-}
-
-.footer .link td {
-    font-size:0;
-    padding-left:10px;
-}
-
-</style>
-
-
-
+<table><tr><td class="spacer _60px mobile_40px">&nbsp;</td></tr></table>
 
 <table>
     <tr>
         <td class="footer container">
             <table>
                 <tr>
-                    <td class="p">
+                    <!--[if mso]><td class="spacer width_20px" width="20">&nbsp;</td><![endif]-->
+                    <td class="p contact">
                         Copyright © 2019 EOSYS, All rights reserved.<br />
                         <br />
                         Wework Seolleung<br />
-                        06210 302, Teheran-ro Gangnam-gu Seoul, Korea<br /><br>
+                        06210&zwnj; 302, &zwnj;Teheran-ro &zwnj;Gangnam-gu &zwnj;Seoul, &zwnj;Korea<br /><br>
                         Want to change how you receive these emails?<br />
-                        You can <a href="*|UNSUB|*" target="_blank" rel="noopener">unsubscribe from this list</a>.
+                        You can
+                        <a href="*|UNSUB|*" target="_blank" rel="noopener"><!--[if mso]><font color="#9b9b9b"><![endif]-->unsubscribe from this list<!--[if mso]></font><![endif]--></a>.
                     </td>
                     <td class="link">
                         <table>
                             <tr>
                                 <td>
-                                    <a href="https://www.facebook.com/chainpartners/" target="_blank" rel="noopener">
+                                    <a href="https://eosys.io" target="_blank" rel="noopener">
                                         <img width="40" height="40" src="https://gallery.mailchimp.com/37dd12f9229fee29509e2fffa/images/85e58fd4-d657-4e6b-bf10-8fe749474c5f.png">
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="https://www.youtube.com/channel/UCSbt2XF9zJECot_vqRsAu5w" target="_blank" rel="noopener">
+                                    <a href="https://www.youtube.com/channel/UCfqueDutLB7th60V6ZZX9Ww" target="_blank" rel="noopener">
                                         <img width="40" height="40" src="https://gallery.mailchimp.com/37dd12f9229fee29509e2fffa/images/e5e5f7a3-706c-489e-b64d-8815be9915a8.png">
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="https://twitter.com/_ChainPartners" target="_blank" rel="noopener">
+                                    <a href="https://twitter.com/@eosys_io" target="_blank" rel="noopener">
                                         <img width="40" height="40" src="https://gallery.mailchimp.com/37dd12f9229fee29509e2fffa/images/dcc13b55-d782-46e0-97b3-11bacd711ad2.png">
                                     </a>
                                 </td>
                             </tr>
                         </table>
                     </td>
+                    <!--[if mso]><td class="spacer width_20px" width="20">&nbsp;</td><![endif]-->
                 </tr>
             </table>
         </td>
